@@ -1,0 +1,250 @@
+/* === FASE 3: SISTEMA DE DISEÑO PARA RESTAURANTE "EL SAZÓN DE GEMI" === */
+
+/* --- 1. VARIABLES Y ESTILOS GLOBALES --- */
+:root {
+    --color-primario: #D9534F;
+    --color-secundario: #2A363B;
+    --color-acento: #F9AD6A;
+    --color-fondo: #F7FAFC;
+    --color-superficie: #FFFFFF;
+    --color-borde-suave: #E2E8F0;
+    --color-exito: #48BB78;
+    --color-error: #F56565;
+    --sombra-suave: 0px 8px 24px rgba(42, 54, 59, 0.1);
+    --radio-borde: 12px;
+    --fuente-titulos: 'Montserrat', sans-serif;
+    --fuente-cuerpo: 'Lato', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--fuente-cuerpo); background-color: var(--color-fondo); color: var(--color-secundario); line-height: 1.6; }
+
+/* --- 2. COMPONENTES REUTILIZABLES --- */
+.btn { display: inline-block; padding: 12px 28px; border-radius: var(--radio-borde); text-decoration: none; font-family: var(--fuente-titulos); font-weight: 600; text-align: center; transition: all 0.3s ease; cursor: pointer; border: 2px solid transparent; }
+.btn-primary { background-color: transparent; border-color: var(--color-secundario); color: var(--color-secundario); }
+.btn-primary:hover { background-color: var(--color-secundario); color: white; }
+.btn-secondary { background-color: transparent; color: var(--color-secundario); }
+.btn-secondary:hover { text-decoration: underline; }
+.btn-action { background-color: var(--color-primario); color: white; border-color: var(--color-primario); }
+.btn-action:hover { transform: translateY(-3px); box-shadow: 0 4px 15px rgba(217, 83, 79, 0.4); }
+.main-header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background-color: var(--color-superficie); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.main-header .logo img { height: 50px; }
+.main-nav ul { list-style: none; display: flex; gap: 2rem; }
+.main-nav a { text-decoration: none; color: var(--color-secundario); font-family: var(--fuente-titulos); font-weight: 600; position: relative; padding-bottom: 5px; }
+.main-nav a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 3px; background-color: var(--color-primario); transition: width 0.3s ease; }
+.main-nav a:hover::after, .main-nav a.active::after { width: 100%; }
+main { padding: 2rem 5%; max-width: 1300px; margin: 0 auto; }
+.promo-card, .product-card { background-color: var(--color-superficie); border-radius: var(--radio-borde); box-shadow: var(--sombra-suave); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.promo-card:hover, .product-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(42, 54, 59, 0.15); }
+.promo-card img, .product-card img { width: 100%; height: 220px; object-fit: cover; }
+.promo-text, .product-info { padding: 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+.promo-text h3, .promo-text h4, .product-info h3 { font-family: var(--fuente-titulos); color: var(--color-secundario); }
+.promo-text .btn, .product-info .btn { margin-top: auto; }
+.main-footer { text-align: center; padding: 2rem; margin-top: 3rem; background-color: var(--color-secundario); color: #A0AEC0; }
+
+/* --- 3, 4, 5, 6: ESTILOS DE PÁGINAS ANTERIORES --- */
+/* Aquí iría todo el CSS que ya teníamos para index, menu, producto y carrito. */
+/* Lo incluyo todo para que el archivo esté completo. */
+.order-start { text-align: center; padding: 3rem 1rem; margin-bottom: 3rem; }
+.order-start h2 { font-family: var(--fuente-titulos); font-size: 2.5rem; margin-bottom: 1.5rem; }
+.order-options { display: flex; justify-content: center; gap: 1.5rem; }
+.main-promotions { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-bottom: 4rem; }
+.secondary-promotions { display: flex; flex-direction: column; gap: 2rem; }
+.promo-card .price { font-size: 2.5rem; font-weight: 700; font-family: var(--fuente-titulos); color: var(--color-primario); }
+.dish-name { font-weight: 600; font-size: 1.2rem; margin-top: -10px; }
+.categories-preview h2 { text-align: center; font-family: var(--fuente-titulos); font-size: 2rem; margin-bottom: 2rem; }
+.category-list { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+.category-item { background-color: var(--color-superficie); padding: 1rem 2rem; border-radius: 50px; text-decoration: none; color: var(--color-secundario); font-weight: 600; box-shadow: var(--sombra-suave); transition: all 0.3s ease; }
+.category-item:hover { background-color: var(--color-acento); color: white; transform: translateY(-5px); }
+.menu-page h1 { font-family: var(--fuente-titulos); font-size: 3rem; text-align: center; margin-bottom: 1rem; }
+.category-nav { display: flex; justify-content: center; margin-bottom: 3rem; background-color: var(--color-superficie); padding: 0.5rem; border-radius: 50px; box-shadow: var(--sombra-suave); }
+.category-nav ul { list-style: none; display: flex; gap: 1rem; }
+.category-nav a { display: block; padding: 0.8rem 1.5rem; border-radius: 50px; text-decoration: none; color: var(--color-secundario); font-weight: 600; transition: all 0.3s ease; }
+.category-nav a:hover { background-color: var(--color-primario); color: white; }
+.menu-category h2 { font-family: var(--fuente-titulos); font-size: 2.5rem; margin-bottom: 2rem; padding-bottom: 0.5rem; border-bottom: 3px solid var(--color-acento); }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 4rem; }
+.product-price { font-size: 1.5rem; font-weight: 700; color: var(--color-primario); margin: 1rem 0; }
+.product-view { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+.product-gallery img { width: 100%; border-radius: var(--radio-borde); box-shadow: var(--sombra-suave); }
+.product-specs .category-tag { display: inline-block; background-color: var(--color-acento); color: white; padding: 5px 15px; border-radius: 50px; font-size: 0.9rem; font-weight: 700; margin-bottom: 1rem; }
+.product-specs h1 { font-family: var(--fuente-titulos); font-size: 3rem; line-height: 1.2; margin-bottom: 1rem; }
+.product-specs .product-description { font-size: 1.1rem; margin-bottom: 1.5rem; }
+.product-specs .product-price { font-size: 2.5rem; font-weight: 700; color: var(--color-primario); margin-bottom: 1.5rem; }
+.quantity-selector { margin-bottom: 1.5rem; }
+.quantity-selector label { font-weight: 700; display: block; margin-bottom: 0.5rem; }
+.quantity-input { display: flex; align-items: center; }
+.quantity-input input { width: 60px; text-align: center; font-size: 1.2rem; font-weight: 700; border: 2px solid var(--color-borde-suave); border-radius: var(--radio-borde); padding: 8px; }
+.quantity-input button { width: 40px; height: 40px; border: 2px solid var(--color-borde-suave); background-color: var(--color-superficie); color: var(--color-secundario); font-size: 1.5rem; cursor: pointer; border-radius: 50%; margin: 0 10px; }
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.custom-notes { margin-bottom: 2rem; }
+.custom-notes label { font-weight: 700; display: block; margin-bottom: 0.5rem; }
+.custom-notes textarea { width: 100%; padding: 10px; font-family: var(--fuente-cuerpo); font-size: 1rem; border: 2px solid var(--color-borde-suave); border-radius: var(--radio-borde); }
+.btn-large { width: 100%; padding: 18px 28px; font-size: 1.2rem; }
+.related-products { margin-top: 5rem; }
+.related-products h2 { font-family: var(--fuente-titulos); font-size: 2rem; text-align: center; margin-bottom: 2rem; }
+.cart-page h1 { font-family: var(--fuente-titulos); font-size: 3rem; text-align: center; margin-bottom: 3rem; }
+.cart-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: flex-start; }
+.cart-item { display: flex; align-items: center; gap: 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid var(--color-borde-suave); }
+.item-image { width: 100px; height: 100px; object-fit: cover; border-radius: var(--radio-borde); }
+.item-details { flex-grow: 1; }
+.item-details .item-name { font-family: var(--fuente-titulos); font-weight: 600; font-size: 1.2rem; }
+.item-details .item-price-unit { color: #888; font-size: 0.9rem; }
+.item-details .item-notes { font-size: 0.9rem; color: var(--color-primario); }
+.item-subtotal { font-weight: 700; font-size: 1.2rem; text-align: right; min-width: 100px; }
+.item-remove { background-color: transparent; border: none; font-size: 1.8rem; color: #ccc; cursor: pointer; transition: color 0.3s ease; }
+.item-remove:hover { color: var(--color-primario); }
+.order-summary { background-color: var(--color-superficie); border-radius: var(--radio-borde); padding: 2rem; box-shadow: var(--sombra-suave); position: sticky; top: 2rem; }
+.order-summary h2 { font-family: var(--fuente-titulos); margin-bottom: 1.5rem; text-align: center; }
+.summary-line { display: flex; justify-content: space-between; margin-bottom: 1rem; font-size: 1.1rem; }
+.summary-total { display: flex; justify-content: space-between; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 2px solid var(--color-borde-suave); font-size: 1.5rem; font-weight: 700; font-family: var(--fuente-titulos); }
+.order-summary .btn-action { width: 100%; margin-top: 1.5rem; }
+.link-secondary { display: block; text-align: center; margin-top: 1rem; color: var(--color-secundario); text-decoration: none; font-weight: 600; }
+.link-secondary:hover { text-decoration: underline; }
+.profile-page h1 { font-family: var(--fuente-titulos); font-size: 3rem; text-align: center; margin-bottom: 3rem; }
+.profile-layout { display: grid; grid-template-columns: 1fr 3fr; gap: 3rem; align-items: flex-start; }
+.profile-nav ul { list-style: none; background-color: var(--color-superficie); border-radius: var(--radio-borde); box-shadow: var(--sombra-suave); padding: 1rem; }
+.profile-nav a { display: block; padding: 1rem; text-decoration: none; color: var(--color-secundario); font-weight: 600; border-radius: 8px; transition: all 0.3s ease; border-left: 4px solid transparent; }
+.profile-nav a:hover { background-color: var(--color-fondo); border-left-color: var(--color-acento); }
+.profile-nav a.active { background-color: var(--color-fondo); border-left-color: var(--color-primario); font-weight: 700; }
+.profile-nav .logout-link { color: var(--color-primario); margin-top: 1rem; border-top: 1px solid var(--color-borde-suave); padding-top: 1rem; }
+.profile-tab-content { display: none; }
+.profile-tab-content.active { display: block; }
+.profile-tab-content h2 { font-family: var(--fuente-titulos); font-size: 2.2rem; margin-bottom: 2rem; border-bottom: 3px solid var(--color-borde-suave); padding-bottom: 1rem; }
+.data-card, .address-card { background-color: var(--color-superficie); padding: 2rem; border-radius: var(--radio-borde); box-shadow: var(--sombra-suave); margin-bottom: 1.5rem; }
+.data-card p { font-size: 1.1rem; margin-bottom: 0.8rem; }
+.data-card .btn { margin-top: 1rem; }
+.address-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+.address-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.default-badge { background-color: var(--color-exito); color: white; padding: 4px 10px; font-size: 0.8rem; font-weight: 700; border-radius: 50px; }
+.address-actions { margin-top: 1rem; display: flex; gap: 1rem; }
+.address-actions a { text-decoration: none; font-weight: 600; color: var(--color-primario); }
+.order-history-table { width: 100%; border-collapse: collapse; background-color: var(--color-superficie); border-radius: var(--radio-borde); box-shadow: var(--sombra-suave); overflow: hidden; }
+.order-history-table th, .order-history-table td { padding: 1rem; text-align: left; }
+.order-history-table thead { background-color: var(--color-fondo); font-family: var(--fuente-titulos); }
+.order-history-table tbody tr { border-bottom: 1px solid var(--color-borde-suave); }
+.order-history-table tbody tr:last-child { border-bottom: none; }
+.order-history-table tbody tr:hover { background-color: #f7f7f7; }
+.status-badge { padding: 5px 12px; border-radius: 50px; font-weight: 700; font-size: 0.9rem; color: white; }
+.status-entregada { background-color: var(--color-exito); }
+.status-cancelada { background-color: var(--color-error); }
+
+
+/* ======================================================= */
+/* --- 8. ¡NUEVO! ESTILOS PÁGINA DE LOGIN (login.html) --- */
+/* ======================================================= */
+
+.auth-page {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.auth-container {
+    max-width: 450px;
+    margin: 0 auto;
+    background-color: var(--color-superficie);
+    padding: 2.5rem;
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-suave);
+}
+
+.auth-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--color-borde-suave);
+    margin-bottom: 2rem;
+}
+
+.tab-link {
+    flex: 1;
+    padding: 1rem;
+    text-align: center;
+    font-family: var(--fuente-titulos);
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: #888;
+    border-bottom: 3px solid transparent;
+    transform: translateY(1px); /* Para alinear con el borde principal */
+}
+
+.tab-link.active {
+    color: var(--color-primario);
+    border-bottom-color: var(--color-primario);
+}
+
+.auth-form {
+    display: none; /* Ocultamos los formularios por defecto */
+}
+.auth-form.active {
+    display: block; /* Mostramos solo el activo */
+}
+
+.auth-form h2 {
+    font-family: var(--fuente-titulos);
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+.auth-form p {
+    text-align: center;
+    color: #888;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 2px solid var(--color-borde-suave);
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-primario);
+}
+
+.forgot-password-link {
+    display: block;
+    text-align: right;
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--color-secundario);
+    text-decoration: none;
+}
+.forgot-password-link:hover {
+    text-decoration: underline;
+}
+
+
+/* --- 9. RESPONSIVIDAD (Ajustes para móviles) --- */
+@media (max-width: 992px) {
+    .main-promotions, .product-view, .cart-layout, .profile-layout {
+        grid-template-columns: 1fr;
+    }
+    .main-nav {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    main { padding: 2rem 1.5rem; }
+    .order-options, .cart-item {
+        flex-direction: column;
+    }
+    .product-specs h1, .cart-page h1, .profile-page h1 {
+        font-size: 2.2rem;
+    }
+    .cart-item {
+        align-items: flex-start;
+    }
+}

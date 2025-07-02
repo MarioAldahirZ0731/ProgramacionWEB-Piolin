@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Platillo - (El Nombre de tu Restaurante)</title>
+    <link rel="stylesheet" href="stylePRO.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">
+            <img src="path/a-tu/logo.png" alt="Logo del Restaurante">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="menu.html">Menú Completo</a></li>
+                <li><a href="index.html#menu-del-dia">Menú del Día</a></li>
+                <li><a href="sucursales.html">Ubicación</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a href="login.html" class="btn btn-secondary">Iniciar Sesión</a>
+            <a href="carrito.html" class="btn btn-primary">Mi Pedido</a>
+        </div>
+    </header>
+
+    <main class="product-detail-page">
+
+        <article class="product-view">
+            
+            <div class="product-gallery">
+                <img src="path/a-tu/milanesa-grande.jpg" alt="Milanesa de Res Empanizada">
+            </div>
+
+            <div class="product-specs">
+                <span class="category-tag">Plato Fuerte</span>
+
+                <h1>Milanesa de Res Empanizada</h1>
+                
+                <p class="product-description">
+                    Tierna milanesa de res, empanizada a la perfección con nuestra receta secreta de la casa. Servida con una generosa porción de papas a la francesa crujientes y una ensalada fresca de lechuga y jitomate.
+                </p>
+
+                <div class="product-price">$120.00</div>
+
+                <div class="quantity-selector">
+                    <label for="quantity">Cantidad:</label>
+                    <div class="quantity-input">
+                        <button class="quantity-btn minus">-</button>
+                        <input type="number" id="quantity" value="1" min="1">
+                        <button class="quantity-btn plus">+</button>
+                    </div>
+                </div>
+
+                <div class="custom-notes">
+                    <label for="notes">Notas para la cocina (ej. sin cebolla, extra picante):</label>
+                    <textarea id="notes" rows="3" placeholder="Añade tus peticiones aquí..."></textarea>
+                </div>
+
+                <button class="btn btn-action btn-large">Agregar a Mi Pedido</button>
+            </div>
+
+        </article>
+
+        <section class="related-products">
+            <h2>También te podría gustar...</h2>
+            <div class="product-grid">
+                <article class="product-card">
+                    <img src="path/a-tu/chile-relleno.jpg" alt="Chile Relleno">
+                    <div class="product-info">
+                        <h3>Chile Relleno de Queso</h3>
+                        <div class="product-price">$110.00</div>
+                        <a href="producto.html?id=15" class="btn btn-action">Ver</a>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <img src="path/a-tu/pollo-rostizado.jpg" alt="Pollo Rostizado">
+                    <div class="product-info">
+                        <h3>1/2 Pollo Rostizado</h3>
+                        <div class="product-price">$95.00</div>
+                        <a href="producto.html?id=18" class="btn btn-action">Ver</a>
+                    </div>
+                </article>
+                </div>
+        </section>
+        
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 El Sazón de Gemi. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

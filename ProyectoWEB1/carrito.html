@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Pedido - (El Nombre de tu Restaurante)</title>
+    <link rel="stylesheet" href="stylePRO.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">
+            <img src="path/a-tu/logo.png" alt="Logo del Restaurante">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="menu.html">Menú Completo</a></li>
+                <li><a href="index.html#menu-del-dia">Menú del Día</a></li>
+                <li><a href="sucursales.html">Ubicación</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a href="login.html" class="btn btn-secondary">Iniciar Sesión</a>
+            <a href="carrito.html" class="btn btn-primary active">Mi Pedido</a>
+        </div>
+    </header>
+
+    <main class="cart-page">
+
+        <h1>Revisa tu Pedido</h1>
+
+        <div class="cart-layout">
+            
+            <section class="cart-items">
+                
+                <article class="cart-item">
+                    <img src="path/a-tu/milanesa.jpg" alt="Milanesa de Res" class="item-image">
+                    <div class="item-details">
+                        <h3 class="item-name">Milanesa de Res Empanizada</h3>
+                        <p class="item-price-unit">Precio unitario: $120.00</p>
+                        <p class="item-notes">Notas: <em>Extra crujiente, por favor.</em></p>
+                    </div>
+                    <div class="item-quantity">
+                        <div class="quantity-input">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" value="1" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                    </div>
+                    <div class="item-subtotal">
+                        <p>Subtotal:</p>
+                        <span>$120.00</span>
+                    </div>
+                    <button class="item-remove">×</button>
+                </article>
+
+                <article class="cart-item">
+                    <img src="path/a-tu/agua-fresca.jpg" alt="Agua de Horchata" class="item-image">
+                    <div class="item-details">
+                        <h3 class="item-name">Agua de Horchata (1L)</h3>
+                        <p class="item-price-unit">Precio unitario: $35.00</p>
+                    </div>
+                    <div class="item-quantity">
+                        <div class="quantity-input">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="number" value="2" min="1">
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                    </div>
+                    <div class="item-subtotal">
+                        <p>Subtotal:</p>
+                        <span>$70.00</span>
+                    </div>
+                    <button class="item-remove">×</button>
+                </article>
+
+                </section>
+
+            <aside class="order-summary">
+                <h2>Resumen del Pedido</h2>
+                <div class="summary-line">
+                    <span>Subtotal:</span>
+                    <span>$190.00</span>
+                </div>
+                <div class="summary-line">
+                    <span>Costo de envío:</span>
+                    <span>$40.00</span>
+                </div>
+                <div class="summary-total">
+                    <span>Total:</span>
+                    <span>$230.00</span>
+                </div>
+                <a href="checkout.html" class="btn btn-action btn-large">Proceder al Pago</a>
+                <a href="menu.html" class="link-secondary">o seguir comprando</a>
+            </aside>
+            
+        </div>
+        
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 El Sazón de Gemi. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

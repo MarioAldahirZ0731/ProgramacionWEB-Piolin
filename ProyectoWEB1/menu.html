@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylePRO.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">
+            <img src="images/logo_restaurante.png" alt="Logo del Restaurante">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="menu.html" class="active">Menú Completo</a></li>
+                <li><a href="index.html#menu-del-dia">Menú del Día</a></li>
+                <li><a href="sucursales.html">Ubicación</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a href="login.html" class="btn btn-secondary">Iniciar Sesión</a>
+            <a href="carrito.html" class="btn btn-primary">Mi Pedido</a>
+        </div>
+    </header>
+
+    <main class="menu-page">
+
+        <h1>Nuestro Menú</h1>
+
+        <nav class="category-nav">
+            <ul>
+                <li><a href="#entradas">Entradas</a></li>
+                <li><a href="#platos-fuertes">Platos Fuertes</a></li>
+                <li><a href="#postres">Postres</a></li>
+                <li><a href="#bebidas">Bebidas</a></li>
+            </ul>
+        </nav>
+
+        <section id="entradas" class="menu-category">
+            <h2>Entradas</h2>
+            <div class="product-grid">
+                <article class="product-card">
+                    <img src="images/sopa_fideos.png" alt="Sopa de Fideo">
+                    <div class="product-info">
+                        <h3>Sopa de Fideo</h3>
+                        <p class="product-description">La clásica sopa de fideo, reconfortante y deliciosa.</p>
+                        <div class="product-price">$35.00</div>
+                        <button class="btn btn-action">Agregar</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="images/ensalada_cesar.png" alt="Ensalada César">
+                    <div class="product-info">
+                        <h3>Ensalada César</h3>
+                        <p class="product-description">Lechuga fresca, crutones, queso parmesano y aderezo césar.</p>
+                        <div class="product-price">$50.00</div>
+                        <button class="btn btn-action">Agregar</button>
+                    </div>
+                </article>
+                </div>
+        </section>
+
+        <section id="platos-fuertes" class="menu-category">
+            <h2>Platos Fuertes</h2>
+            <div class="product-grid">
+                <article class="product-card">
+                    <img src="images/milanesa_res.png" alt="Milanesa de Res">
+                    <div class="product-info">
+                        <h3>Milanesa de Res Empanizada</h3>
+                        <p class="product-description">Acompañada de papas a la francesa y ensalada fresca.</p>
+                        <div class="product-price">$115.00</div>
+                        <button class="btn btn-action">Agregar</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="images/chile_relleno.png" alt="Chile Relleno">
+                    <div class="product-info">
+                        <h3>Chile Relleno de Queso</h3>
+                        <p class="product-description">Bañado en caldillo de jitomate y acompañado de arroz.</p>
+                        <div class="product-price">$80.00</div>
+                        <button class="btn btn-action">Agregar</button>
+                    </div>
+                </article>
+                </div>
+        </section>
+
+        </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 El Sazón de Gemi. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

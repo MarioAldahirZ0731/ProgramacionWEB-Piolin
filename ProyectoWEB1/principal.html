@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylePRO.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">
+            <img src="images/logo_restaurante.png" alt="Logo del Restaurante">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="menu.html">Menú Completo</a></li>
+                <li><a href="#menu-del-dia">Menú del Día</a></li>
+                <li><a href="sucursales.html">Ubicación</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a href="login.html" class="btn btn-secondary">Iniciar Sesión</a>
+            <a href="carrito.html" class="btn btn-primary">Mi Pedido</a>
+        </div>
+    </header>E
+
+    <main>
+        <section class="order-start">
+            <h2>EMPIEZA TU PEDIDO</h2>
+            <div class="order-options">
+                <a href="menu.html" class="btn btn-action">ENTREGA A DOMICILIO</a>
+                <a href="menu.html" class="btn btn-secondary">RECOGER EN TIENDA</a>
+            </div>
+        </section>
+
+        <section class="main-promotions" id="menu-del-dia">
+            
+            <article class="promo-card large">
+                <img src="images/pollo_salsa_verdE.png" alt="Guisado del día">
+                <div class="promo-text">
+                    <h3>PLATO FUERTE DEL DÍA</h3>
+                    <p class="dish-name">Pollo en Salsa Verde con Arroz</p>
+                    <div class="price">$99</div>
+                    <p class="price-note">Incluye guarnición</p>
+                    <a href="producto.html?id=12" class="btn btn-action">AGREGAR AL PEDIDO</a>
+                </div>
+            </article>
+
+            <div class="secondary-promotions">
+                
+                <article class="promo-card small">
+                    <img src="images/lentejas.png" alt="Sopa del día">
+                    <div class="promo-text">
+                        <h4>ENTRADA DEL DÍA</h4>
+                        <p class="dish-name">Sopa de Lentejas</p>
+                        <a href="producto.html?id=1" class="btn btn-action">VER DETALLES</a>
+                    </div>
+                </article>
+                
+                <article class="promo-card small">
+                    <img src="images/agua_horchata.png" alt="Bebida del día">
+                    <div class="promo-text">
+                        <h4>BEBIDA DEL DÍA</h4>
+                        <p class="dish-name">Agua de Horchata</p>
+                        <a href="producto.html?id=25" class="btn btn-action">VER DETALLES</a>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="categories-preview">
+            <h2>Explora Nuestro Menú Completo</h2>
+            <div class="category-list">
+                <a href="menu.html#entradas" class="category-item">Entradas</a>
+                <a href="menu.html#platos-fuertes" class="category-item">Platos Fuertes</a>
+                <a href="menu.html#postres" class="category-item">Postres</a>
+                <a href="menu.html#bebidas" class="category-item">Bebidas</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 El Sazón de Gemi. Todos los derechos reservados.</p>
+        </footer>
+
+</body>
+</html>
